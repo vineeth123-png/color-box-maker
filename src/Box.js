@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class Box extends Component {
 	static defaultProps = {
-		height: "200px",
-		width: "200px",
+		height: "20",
+		width: "20",
 		color: "slateblue"
 	};
 	render() {
@@ -12,13 +12,11 @@ class Box extends Component {
 				<div
 					style={{
 						backgroundColor: this.props.color,
-						width: this.props.width,
-						height: this.props.height
+						width: `${this.props.width}em`,
+						height: `${this.props.height}em`
 					}}
 				></div>
-				<button onClick={this.props.handleClick}>
-					Remove this Box!
-				</button>
+				<button onClick={this.props.handleClick}>X</button>
 			</div>
 		);
 	}
