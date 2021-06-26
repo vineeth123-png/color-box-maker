@@ -6,6 +6,13 @@ class Box extends Component {
 		width: "20",
 		color: "slateblue"
 	};
+	constructor(props) {
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+	handleClick(evt) {
+		this.props.removeBox(this.props.id);
+	}
 	render() {
 		return (
 			<div>
@@ -16,7 +23,7 @@ class Box extends Component {
 						height: `${this.props.height}em`
 					}}
 				></div>
-				<button onClick={this.props.handleClick}>X</button>
+				<button onClick={this.handleClick}>X</button>
 			</div>
 		);
 	}
